@@ -4,7 +4,7 @@
 
 ## Befehle zum ausführen
 - gesamte Klasse einfach ausführen ohne SchnickSchnack: 
-```shell vendor/bin/phpunit --bootstrap vendor/autoload.php tests/SampleClassTest.php ```
+````shell vendor/bin/phpunit --bootstrap vendor/autoload.php tests/SampleClassTest.php ````
 - gesamte Klasse einfach ausführen mit testdox:
 ```shell vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests/SampleClassTest.php ```
 - gesamte Klasse mit manueller code coverage, phpunit.xml Config ohne testdox:
