@@ -3,6 +3,8 @@ declare (strict_types = 1);
 
 namespace foo;
 
+use InvalidArgumentException;
+
 class SampleClass {
   
     /**
@@ -25,5 +27,40 @@ class SampleClass {
         }
         
         return $this->doSomething($left, (int)$right);
+    }
+  
+    /**
+     * Öffentliche Funktion ruft eine private auf um einen Input zu verändern
+     * @param string $input
+     */
+    public function doSomethingHidden(string $input): string {
+        // Bail out if String is empty
+        if ('' === trim($input)) {
+            throw new InvalidArgumentException('String is empty.');
+        }
+        
+        return $this->manipulate($input);
+    }
+    
+    /**
+     * @param string $input 
+     */
+    private function manipulate(string $input): string {
+        // Bail out if String is too short
+        if (2 >= strlen($input)) {
+            throw new InvalidArgumentException('String is too short.');
+        }
+        
+        // Bail out if String is too long
+        if (20 <= strlen($input)) {
+            throw new InvalidArgumentException('String is too long.');
+        }
+        // return all chars from pos 5
+        if (10 === strlen($input)) {
+            return substr($input, 5);
+        }
+        
+        // return the last 2 chars
+        return substr($input, -2);
     }
 }
