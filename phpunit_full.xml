@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        bootstrap="vendor/autoload.php"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnFailure="false"
+        verbose="true"
+        stderr="true"
+        testdox="true"
+>
+    <testsuites>
+        <testsuite name="sample">
+            <directory>tests/</directory>
+        </testsuite>
+        <testsuite name="samplephp73">
+            <directory phpVersion="7.3.0" phpVersionOperator=">=">tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="build/phpunit/coverage/" lowUpperBound="35" highLowerBound="70"/>
+        <log type="testdox-html" target="build/phpunit/testdox/testdox.html"/>
+    </logging>
+</phpunit>

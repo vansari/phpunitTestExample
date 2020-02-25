@@ -1,0 +1,27 @@
+{
+    "name": "kjunker/phpunit-test-example",
+    "description": "Einfache Beispiele für Nutzung von PHPUnit",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "~8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "junker.kurt",
+            "email": "junker.kurt@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "foo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "foo\\": "tests/"
+        }
+    }
+}
